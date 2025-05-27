@@ -1,2 +1,3 @@
 random patch start
 added missing import
+optimize gas calculation for edge cases
