@@ -4,3 +4,4 @@ optimize gas calculation for edge cases
 refactor gas simulation boundary
 optimize gas efficiency
 improve efficiency for large transactions
+refactor: enhance error handling for network failures
