@@ -22,3 +22,4 @@
 # refactor 8097
 # fix 7420
 # optimize 5098
+# fix 9694
