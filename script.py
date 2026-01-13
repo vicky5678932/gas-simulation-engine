@@ -1,45 +1,18 @@
-# auto-created
-# fix 7838
-# refactor 2564
-# fix 6339
-# refactor 6852
-# fix 9818
-# optimize 2793
-# refactor 6513
-# fix 1754
-# fix 9917
-# refactor 2316
-# optimize 7231
-# optimize 9200
-# optimize 1044
-# fix 3804
-# optimize 8913
-# refactor 4504
-# fix 5337
-# fix 2714
-# optimize 9317
-# refactor 7393
-# refactor 8097
-# fix 7420
-# optimize 5098
-# fix 9694
-# optimize 1939
-# refactor 9852
-# refactor 1902
-# fix 8777
-# fix 7331
-# optimize 4216
-# fix 3858
-# fix 5899
-# optimize 7007
-# refactor 9219
-# refactor 4217
-# fix 2238
-# refactor 7549
-# fix 8662
-# fix 8847
-# fix 4155
-# refactor 6957
-# refactor 8217
-# fix 2593
-# fix 3808
+from engine import simulate_tx_execution
+
+def main():
+    print("Starting Gas Simulation Engine...")
+    
+    scenarios = [
+        {"limit": 21000, "price": 25, "complexity": 1.0},
+        {"limit": 150000, "price": 40, "complexity": 2.5},
+        {"limit": 500000, "price": 15, "complexity": 5.0}
+    ]
+    
+    for i, s in enumerate(scenarios, 1):
+        result = simulate_tx_execution(s["limit"], s["price"], s["complexity"])
+        status = "PASSED" if result["success"] else "FAILED"
+        print(f"Scenario {i}: {status} | Usage: {result['actual_usage']} | Cost: {result['cost_eth']} ETH")
+
+if __name__ == "__main__":
+    main()
